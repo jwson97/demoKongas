@@ -6,6 +6,6 @@ langchain_openai==0.2.2
 python-dotenv==1.0.1
 streamlit==1.39.0
 PyMuPDF==1.24.11
-chromadb==0.5.11
+chromadb==0.4.15
 protobuf==4.25.5
-pysqlite3-binary==0.5.2
+pysqlite3-binary
