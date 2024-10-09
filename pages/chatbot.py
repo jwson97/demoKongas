@@ -13,13 +13,14 @@ from dotenv import load_dotenv
 import base64
 from pathlib import Path
 import re
+import sqlite3
 
 def load_resources():
 
     ####################  semantic
     # Vector DB 로드
     semantic_persist_directory = "./semantic_chroma_db"
-    semantic_vector_db = Chroma(persist_directory=semantic_persist_directory, embedding_function=OpenAIEmbeddings())
+    semantic_vector_db = Chroma(persist_directory=semantic_persist_directory, embedding_function=OpenAIEmbeddings(), sqlite3=sqlite3)
     
     # BM25Retriever 로드
     with open('semantic_bm25_retriever.pkl', 'rb') as f:
