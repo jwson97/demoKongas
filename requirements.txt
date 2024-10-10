@@ -11,3 +11,4 @@ protobuf==4.25.5
 pysqlite3-binary
 rank-bm25==0.2.2
 reportlab==4.2.5
+matplotlib==3.9.2
