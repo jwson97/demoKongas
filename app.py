@@ -1,8 +1,10 @@
 import streamlit as st
-from multiapp.MultiApp import MultiApp
-from pages import chatbot, scheduler, report_generator
 # 페이지 설정 (상단의 'app'과 같은 기본 요소를 없애는 코드)
 st.set_page_config(page_title="KOGAS 업무용 AI 비서", layout="wide")
+
+from multiapp.MultiApp import MultiApp
+from pages import chatbot, scheduler, report_generator
+
 
 from dotenv import load_dotenv
 
