@@ -15,6 +15,57 @@ from pathlib import Path
 import re
 import sqlite3
 
+def set_custom_style():
+    st.markdown("""
+    <style>
+    .stApp {
+        background-color: #f0f8ff;
+    }
+    .stTextInput > div > div > input {
+        background-color: #ffffff;
+        color: #333333;
+    }
+    .stButton > button {
+        background-color: #007bff;
+        color: white;
+    }
+    .stMarkdown {
+        font-family: 'Arial', sans-serif;
+        color: #333333;
+    }
+    .chat-message {
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .chat-message.user {
+        background-color: #e6f3ff;
+        border-left: 5px solid #007bff;
+    }
+    .chat-message.bot {
+        background-color: #f8f9fa;
+        border-left: 5px solid #28a745;
+    }
+    .chat-message .content {
+        width: 100%;
+    }
+    .chat-message .content p {
+        margin: 0;
+        color: #333333;
+    }
+    h1, h2, h3 {
+        color: #007bff;
+    }
+    .stAlert {
+        background-color: #fff3cd;
+        color: #856404;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+
 def load_resources():
 
     ####################  semantic
@@ -133,6 +184,8 @@ def render_pdf_page(file_path, page_number):
 def app():
 
     load_dotenv()
+
+    set_custom_style()  # 커스텀 스타일 적용
 
     st.title("KOGAS AI 챗봇 서비스")
     st.write("공사 업무 관련 AI 챗봇 기능입니다.")
